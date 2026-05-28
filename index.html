@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RRHH · Panel Ejecutivo</title>
+
+  <!-- App icon -->
+  <link rel="icon" type="image/png" href="icon-app.png">
+  <link rel="apple-touch-icon" href="icon-app.png">
+
+  <!-- Open Graph — imagen al compartir el link -->
+  <meta property="og:title" content="RRHH · Panel Ejecutivo">
+  <meta property="og:description" content="Panel ejecutivo de Recursos Humanos — indicadores de dotación, ausentismo, rotación y accidentabilidad.">
+  <meta property="og:image" content="og-preview.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="og-preview.png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sb-overlay" id="sb-overlay"></div>
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <div class="sb" id="sidebar">
+    <div class="sb-logo">
+      <div class="sb-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75M9 7a4 4 0 110 8 4 4 0 010-8z" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+      </div>
+      <div class="sb-logo-text">
+        <div class="sb-logo-title">RRHH</div>
+        <div class="sb-logo-sub">Dirección</div>
+      </div>
+      <button class="sb-toggle" id="sb-toggle" title="Contraer barra">‹</button>
+    </div>
+
+    <button class="sb-toggle-mini" id="sb-toggle-mini" title="Expandir barra">›</button>
+
+    <div class="sb-banner" title="César Lugo · Director de RRHH">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=70" alt="Foto de referencia">
+      <div class="sb-banner-overlay">
+        <div class="sb-banner-title">César Lugo</div>
+        <div class="sb-banner-sub">Director de RRHH</div>
+      </div>
+    </div>
+
+    <div class="sb-nav" id="sb-nav">
+      <div class="sb-section">Inicio</div>
+      <button class="nav-item active" data-route="index">
+        <span class="nav-ico" data-icon="home"></span><span class="nav-label">Panel ejecutivo</span>
+      </button>
+
+      <div class="sb-section">Unidades</div>
+      <button class="nav-item" data-route="index">
+        <span class="nav-ico" data-icon="empresa"></span><span class="nav-label">Empresa Total</span>
+      </button>
+      <button class="nav-item" data-route="sabores">
+        <span class="nav-ico brand" data-icon="sabores"></span><span class="nav-label">Sabores Express</span>
+        <span class="nav-dot" style="background:#60A5FA"></span>
+      </button>
+      <button class="nav-item" data-route="extremas">
+        <span class="nav-ico brand" data-icon="extremas"></span><span class="nav-label">Extremas</span>
+        <span class="nav-dot" style="background:#818CF8"></span>
+      </button>
+      <button class="nav-item" data-route="staff">
+        <span class="nav-ico" data-icon="staff"></span><span class="nav-label">Staff</span>
+        <span class="nav-dot" style="background:#38BDF8"></span>
+      </button>
+      <button class="nav-item" data-route="fabrica">
+        <span class="nav-ico" data-icon="fabrica"></span><span class="nav-label">Fábrica</span>
+        <span class="nav-dot" style="background:#64748B"></span>
+      </button>
+
+      <div class="sb-section">Gestión</div>
+      <button class="nav-item" data-route="judiciales">
+        <span class="nav-ico" data-icon="judiciales"></span><span class="nav-label">Inf. Judiciales</span>
+      </button>
+      <button class="nav-item" data-route="inspecciones">
+        <span class="nav-ico" data-icon="inspecciones"></span><span class="nav-label">Inspecciones</span>
+      </button>
+      <button class="nav-item" data-route="accidentabilidad">
+        <span class="nav-ico" data-icon="accidentabilidad"></span><span class="nav-label">Accidentabilidad</span>
+      </button>
+      <button class="nav-item" data-route="rotacion">
+        <span class="nav-ico" data-icon="rotacion"></span><span class="nav-label">Rotación</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-left">RRHH <span class="topbar-crumb-sep">›</span> <strong id="crumb">Panel Ejecutivo</strong></div>
+      <div class="topbar-right">
+        <button class="upload-btn" id="upload-btn">↑ Actualizar datos</button>
+        <span class="topbar-date">Mayo 2026</span>
+      </div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
